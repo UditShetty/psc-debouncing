@@ -1,0 +1,32 @@
+img{
+    height: 100px;
+    display: block;
+    margin-bottom: 20px;
+    
+}
+body{
+    background-color: black;
+}
+.container{
+    /* border: 2px solid black; */
+    /* display: inline; */
+    
+    width: 250px;
+    height: 200px;
+    margin: auto;
+}
+#query{
+    padding:10px 30px;
+    border-radius: 20px;
+    border: 1px solid grey;
+}
+#results{
+    width: 220px;
+    height: 200px;
+    border: 1px solid black;
+    border-top: none;
+    background-color: white;
+    overflow: scroll;
+}
+
+
