@@ -30,12 +30,14 @@ async function main(){
    let data=await getData()
     appendData(data)
 }
+
+
 let id;
 function debouncing(func, delay){
     if(id){
         clearTimeout(id)
     }
-setTimeout(function(){
+id=setTimeout(function(){
     func()
 },delay)
 }
