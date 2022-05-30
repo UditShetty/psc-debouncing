@@ -4,15 +4,22 @@ async function getData(){
 
     let url =  `https://swapi.dev/api/people/?search=${query}`
 
-    var res= await fetch(url)
+
+
+    try {
+        var res= await fetch(url)
 
     var data= await res.json()
     console.log(data)
     return data.results
+    } catch (error) {
+        console.log("error:", error)
+    }
+    
 
    
 }
-
+var data=JSON.parse(localStorage.getItem("data")) || []
 function appendData(data){
     let results= document.getElementById("results")
     results.innerHTML=null
@@ -20,6 +27,13 @@ function appendData(data){
     data.forEach(function(el){
         let p= document.createElement("p")
         p.innerText=el.name
+        p.addEventListener("click",function(){
+            arr.push(el)
+            console.log(arr)
+            var data= localStorage.setItem("data",JSON.stringify(arr))
+            console.log(data)
+            window.location.href="data.html"
+        })
 
         results.append(p)
     })

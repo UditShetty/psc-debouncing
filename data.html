@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    var data=JSON.parse(localStorage.getItem("data"))||[]
+    // console.log(arr)
+    var container= document.getElementById("container")
+
+    appendData(data)
+
+    
+    function appendData(data){
+        data.forEach(function(elem){
+            console.log(elem)
+            let div= document.createElement("div")
+
+            let name= document.createElement("p")
+            name.innerText= elem.name
+
+            // div.append(name)
+            container.append(name)
+
+        })
+    }
+    
+</script>
